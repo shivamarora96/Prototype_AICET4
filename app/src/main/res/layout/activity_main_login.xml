@@ -3,50 +3,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.teamninjas.prototype_aicet4.Activities.CollgeStudent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
-    >
+    android:background="@drawable/blurredbackground">
+
 
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="EXISTING USER?"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
         android:textSize="20dp"
         android:textAlignment="center"/>
 
-    <EditText
+    <LinearLayout
+        android:layout_marginTop="5sp"
+        android:layout_margin="7dp"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_margin="10dp"
-        android:id="@+id/email"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+    <EditText
+        android:inputType="textEmailAddress"
+        android:id="@+id/Login_email"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="EMAIL-ID"/>
-    <EditText
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:id="@+id/password"
-        android:hint="PASSWORD"
-        android:inputType="textPassword"/>
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/Login_password"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PASSWORD"/>
+    </android.support.design.widget.TextInputLayout>
     <Button
-        android:layout_width="wrap_content"
+        android:background="@color/colorAccent"
+        android:textColor="#ffffff"
+          android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:onClick="login"
         android:text="LOGIN"
+        android:layout_marginBottom="5dp"
         android:layout_gravity="center"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="FORGOT PASSWORD?"
         android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginBottom="10sp"
+        android:textColor="@color/colorAccent"
         android:id="@+id/forgot"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:textSize="15sp"
         android:onClick="forget"
         android:clickable="true"/>
 
-
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_marginTop="20dp"
@@ -62,13 +98,16 @@
             android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
             android:text="OR"
             android:textSize="20dp"
             />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="2dp"
+            android:backgroundTint="#ffffff"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/tvText"
             android:background="#000000"
@@ -76,7 +115,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="2dp"
+            android:backgroundTint="#ffffff"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/tvText"
             android:background="#000000"
@@ -85,10 +125,10 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="5">
+        >
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
@@ -97,23 +137,12 @@
         android:layout_weight="2"
         android:layout_marginLeft="15dp"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="25dp"
+        app:paddingStart="20dp"
+        app:paddingEnd="20dp"
        />
 
-    <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/profileImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_weight="1"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:textSize="25dp"/>
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button"
@@ -122,7 +151,9 @@
             android:layout_weight="2"
             android:padding="5dp"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="31dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="9dp"
             />
 
     </LinearLayout>
@@ -130,9 +161,11 @@
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="15sp"
         android:textAlignment="center"
-        android:id="@+id/notuser"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:id="@+id/Login_notuser"
         android:text="NOT A USER? SIGN UP NOW"
         />
 

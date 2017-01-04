@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
-    tools:context="com.teamninjas.prototype_aicet4.MasterAcitivty">
+    tools:context="com.teamninjas.prototype_aicet4.Activities.MasterAcitivty">
 
 
     <android.support.design.widget.CoordinatorLayout

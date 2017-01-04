@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/book"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -15,29 +16,49 @@
         android:layout_height="wrap_content"
         android:text="IF STUDENT ?"
         android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
         android:textSize="30dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/student_cap"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="10    sp"
+        android:layout_marginBottom="5dp"
+        />
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    >
+
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_noinfo"
             android:text=""
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="10dp"
             android:textSize="20sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:id="@+id/ll_college"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+
             >
 
 
@@ -55,7 +76,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:id="@+id/ll_course"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
@@ -75,9 +97,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:id="@+id/ll_branch"
             android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             >
 
@@ -95,9 +118,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:id="@+id/ll_year"
             android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             >
 
@@ -115,11 +139,18 @@
         </LinearLayout>
     </LinearLayout>
 
+</ScrollView>
+
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="250sp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:onClick="submit"
+        android:background="@color/colorAccent"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:text="SUBMIT"/>
 
     <TextView
@@ -128,8 +159,10 @@
         android:text="NOT A STUDENT-SKIP"
         android:gravity="center"
         android:id="@+id/skipid"
-        android:layout_marginTop="20dp"
-        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10sp"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
         android:onClick="skip"
         android:clickable="true"/>
 

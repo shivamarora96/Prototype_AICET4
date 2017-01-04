@@ -66,18 +66,15 @@ public class MainLogin extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main_login);
-        eemail = (EditText) findViewById(R.id.email);
-        epassword = (EditText) findViewById(R.id.password);
+        eemail = (EditText) findViewById(R.id.Login_email);
+        epassword = (EditText) findViewById(R.id.Login_password);
         tforgot = (TextView) findViewById(R.id.forgot);
-        tnotuser = (TextView) findViewById(R.id.notuser);
+        tnotuser = (TextView) findViewById(R.id.Login_notuser);
+
         //to underline text
         tforgot.setPaintFlags(tforgot.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tnotuser.setPaintFlags(tnotuser.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        //for fb and g+ signin
-
-        //Initializing Views
-        profilePhoto = (NetworkImageView) findViewById(R.id.profileImage);
 
         //Initializing google signin option
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -88,6 +85,15 @@ public class MainLogin extends AppCompatActivity implements View.OnClickListener
         signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_WIDE);
         signInButton.setScopes(gso.getScopeArray());
+
+        //setListner To tnotuser
+        tnotuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toSinup = new Intent(MainLogin.this , SinupActivity.class);
+                startActivity(toSinup);
+            }
+        });
 
         //Initializing google api client
         mGoogleApiClient = new GoogleApiClient.Builder(this)

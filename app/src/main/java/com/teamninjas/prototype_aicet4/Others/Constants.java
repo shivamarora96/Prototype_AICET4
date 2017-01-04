@@ -1,4 +1,4 @@
-package com.teamninjas.prototype_aicet4;
+package com.teamninjas.prototype_aicet4.Others;
 
 /**
  * Created by ShivamArora on 27-12-2016.

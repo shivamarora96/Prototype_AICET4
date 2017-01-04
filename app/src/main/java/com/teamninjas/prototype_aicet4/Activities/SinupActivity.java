@@ -1,4 +1,4 @@
-package com.teamninjas.prototype_aicet4;
+package com.teamninjas.prototype_aicet4.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.teamninjas.prototype_aicet4.Others.Constants;
+import com.teamninjas.prototype_aicet4.R;
 
 public class SinupActivity extends AppCompatActivity {
 

@@ -9,13 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/Custom_theme">
         <activity android:name=".Main">
+
+        </activity>
+        <activity android:name=".SinupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SinupActivity"></activity>
     </application>
 
 </manifest>

@@ -1,7 +1,9 @@
-package com.teamninjas.prototype_aicet4;
+package com.teamninjas.prototype_aicet4.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.teamninjas.prototype_aicet4.R;
 
 public class MasterAcitivty extends AppCompatActivity {
 

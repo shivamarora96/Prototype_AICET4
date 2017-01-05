@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
@@ -91,6 +90,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold|italic"
             android:background="@color/colorPrimary"
             android:text="Please select a profile picture and the colleges you want to follow: "/>
 
@@ -118,10 +118,6 @@
 
 
     </android.support.v4.widget.NestedScrollView>
-
-
-
-
 
 </android.support.design.widget.CoordinatorLayout>
     <Button

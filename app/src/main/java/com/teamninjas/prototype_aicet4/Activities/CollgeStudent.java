@@ -1,5 +1,6 @@
 package com.teamninjas.prototype_aicet4.Activities;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -110,8 +111,8 @@ public class CollgeStudent extends AppCompatActivity {
         check = feed();
         // check = true;
         if (check.equals(true)) {
-           // Intent i = new Intent(CollgeStudent.this, nextactivity.class);
-           // startActivity(i);
+            Intent i = new Intent(CollgeStudent.this, AdditionalInfo.class);
+           startActivity(i);
         }else
             Toast.makeText(getApplicationContext(),"PLEASE FILL ALL DETAILS",Toast.LENGTH_LONG).show();
 
@@ -120,8 +121,8 @@ public class CollgeStudent extends AppCompatActivity {
 
 
     public void skip(View view) {
-        //Intent i = new Intent(CollgeStudent.this,nextact.class);
-        //startActivity(i);
+        Intent i = new Intent(CollgeStudent.this,AdditionalInfo.class);
+        startActivity(i);
     }
 
     //to check if any field is not empty

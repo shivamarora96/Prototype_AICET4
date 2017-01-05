@@ -239,4 +239,9 @@ public class AdditionalInfo extends AppCompatActivity {
 
         mAdapter.notifyDataSetChanged();
     }
+
+    public void finalsub(View view){
+        Intent i =new Intent(AdditionalInfo.this,MasterAcitivty.class);
+        startActivity(i);
+    }
 }

@@ -125,5 +125,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="SUBMIT"
+        android:onClick="finalsub"
         android:background="@color/colorPrimary"/>
 </RelativeLayout>

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
 
+import com.teamninjas.prototype_aicet4.FeedRecyclerView.MainFeedRecyclerView;
 import com.teamninjas.prototype_aicet4.Fragments.NewsFeed;
 import com.teamninjas.prototype_aicet4.Fragments.Notification;
 
@@ -28,7 +29,7 @@ public class Master_Adapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         if(position == 0) {
-            return new NewsFeed();
+            return new MainFeedRecyclerView();
         }
 
         else if(position == 1)

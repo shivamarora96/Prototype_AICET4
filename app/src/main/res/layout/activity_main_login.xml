@@ -165,6 +165,8 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textStyle="bold"
+        android:clickable="true"
+        android:onClick="signed"
         android:id="@+id/Login_notuser"
         android:text="NOT A USER? SIGN UP NOW"
         />

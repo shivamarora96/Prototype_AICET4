@@ -149,7 +149,7 @@ public class MainLogin extends AppCompatActivity implements View.OnClickListener
         semail = eemail.getText().toString();
         spassword = epassword.getText().toString();
         Toast.makeText(getApplicationContext(),"check "+semail+spassword,Toast.LENGTH_LONG).show();
-        Intent i =new Intent(MainLogin.this,CollgeStudent.class);
+        Intent i =new Intent(MainLogin.this,MasterAcitivty.class);
         startActivity(i);
 
 
@@ -158,6 +158,11 @@ public class MainLogin extends AppCompatActivity implements View.OnClickListener
 
     public void forget(View v){
        //to be implemented using backend
+    }
+
+    public void signed(View view){
+        Intent i =new Intent(MainLogin.this,SinupActivity.class);
+        startActivity(i);
     }
 
     //fb and g+ sign in functions

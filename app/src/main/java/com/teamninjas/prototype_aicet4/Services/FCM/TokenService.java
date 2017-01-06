@@ -1,6 +1,7 @@
 package com.teamninjas.prototype_aicet4.Services.FCM;
 
 import android.app.Service;
+import android.provider.Settings.Secure;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -17,10 +18,15 @@ public class TokenService extends FirebaseInstanceIdService {
     public void onTokenRefresh() {
 
         String currentToken = FirebaseInstanceId.getInstance().getToken() ;
-        Log.i(TAG , "Token  : " + currentToken + "\n" + " ID : " + FirebaseInstanceId.getInstance().getId()  ) ;
+        String device_id = get_device_id();
+        Log.i(TAG , "Token  : " + currentToken + "\n" + " ID : " + FirebaseInstanceId.getInstance().getId() + "\n device_id = " + device_id) ;
 
         send_Token_To_Server(currentToken) ;
 
+    }
+
+    private String get_device_id(){
+      return  Secure.getString(getContentResolver() , Secure.ANDROID_ID) ;
     }
 
     private void send_Token_To_Server(String currentToken) {

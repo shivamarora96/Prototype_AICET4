@@ -1,5 +1,6 @@
 package com.teamninjas.prototype_aicet4.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +51,8 @@ public class SinupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 set_Values_To_Paramters_And_Post_Over_Server();
+                Intent i =new Intent(SinupActivity.this,CollgeStudent.class);
+                startActivity(i);
                 Log.i(TAG , "Values - > "  +  mName  + " : " + mSex  + " : "+ mEmailId  + " : " + mPass + " : " + mConfirmPass );
             }
         });

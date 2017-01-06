@@ -25,23 +25,23 @@
 
         <activity android:name=".Activities.SinupActivity" /> >
 
-        <activity android:name=".Activities.MasterAcitivty" >
+        <activity android:name=".Activities.MasterAcitivty" ></activity>
 
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
+            </activity>-->
 
         <activity android:name=".Activities.AdditionalInfo" />
 
 
 
         <activity android:name=".Activities.MainLogin">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <!-- for the facebook login -->

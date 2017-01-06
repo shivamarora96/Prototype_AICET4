@@ -18,6 +18,9 @@ android {
         }
     }
 }
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -27,5 +30,21 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.github.florent37:materialtextfield:1.0.5'
     compile 'com.android.support:design:24.2.+'
+
+
+    //Apekshit .....
+    compile 'com.github.florent37:materialtextfield:1.0.5'
+    compile 'com.android.support:recyclerview-v7:24.0.+'
+    compile 'com.android.support:cardview-v7:24.0.+'
+
+    //anshul
+    compile 'com.google.android.gms:play-services-auth:8.3.0'
+    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    compile 'com.google.android.gms:play-services:8.3.0'
+    compile 'com.facebook.android:facebook-android-sdk:4.1.0'
+    compile 'com.squareup.picasso:picasso:2.4.0'
+
+
+
     testCompile 'junit:junit:4.12'
 }

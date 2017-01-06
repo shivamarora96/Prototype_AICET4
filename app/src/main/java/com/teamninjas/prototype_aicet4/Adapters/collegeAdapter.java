@@ -40,8 +40,8 @@ public class collegeAdapter extends RecyclerView.Adapter<collegeAdapter.MyViewHo
                // Log.d("ABC","clicked at pos"+getPosition()+getAdapterPosition());
                 checked=sharedpreferences.getInt("pos"+getPosition(),-1);
                if(checked==0) {
-                   v.setBackgroundColor(Color.GRAY);
-                   image.setImageResource(R.drawable.tick);
+                   v.setBackgroundColor(Color.LTGRAY);
+                   image.setImageResource(R.drawable.check);
                    editor.putInt("pos"+getPosition(),1);
                }else if(checked==1){
                    v.setBackgroundColor(Color.WHITE);

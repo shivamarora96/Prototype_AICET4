@@ -1,21 +1,14 @@
 package com.teamninjas.prototype_aicet4.Activities;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
 import com.teamninjas.prototype_aicet4.Adapters.Master_Adapter;
 import com.teamninjas.prototype_aicet4.R;
 
@@ -60,46 +53,6 @@ public class MasterAcitivty extends AppCompatActivity {
         mActionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         mActionBarDrawerToggle.syncState();
 
-        if(!isGooglePlayServicesAvailable(MasterAcitivty.this)){
-            Toast.makeText(MasterAcitivty.this , "Please Update Your GOOGLe Play Service" , Toast.LENGTH_LONG).show();
-
-
-        }
 
     }
-
-//Check For GOOGLE PLAY SERVICE UPDATE .........................
-    public boolean isGooglePlayServicesAvailable(final Activity activity) {
-        GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
-        int status = googleApiAvailability.isGooglePlayServicesAvailable(activity);
-        if(status != ConnectionResult.SUCCESS) {
-            Log.i("PService" , "Not Available");
-            if(googleApiAvailability.isUserResolvableError(status)) {
-                googleApiAvailability.getErrorDialog(activity, status, 2404).show();
-            }
-            AlertDialog playServiceDialogue = new AlertDialog.Builder(activity)
-                    .setTitle("Not Compatible ")
-                    .setMessage("Please Update Your Google Play Service !!")
-                    .setIcon(android.R.drawable.stat_notify_error)
-                    .setNeutralButton(" OK ", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            activity.finish();
-                        }
-                    })
-                    .create() ;
-            playServiceDialogue.show();
-
-            return false;
-        }
-
-        return true;
-    }
-
-
-
-
-
-
-
 }

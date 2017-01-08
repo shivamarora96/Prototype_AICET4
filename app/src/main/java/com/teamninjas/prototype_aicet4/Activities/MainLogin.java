@@ -60,6 +60,7 @@ public class MainLogin extends AppCompatActivity implements View.OnClickListener
     //Image Loader
     private ImageLoader imageLoader;
 
+    //TODO CONNECT IT WITH SERVER
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +93,9 @@ public class MainLogin extends AppCompatActivity implements View.OnClickListener
             public void onClick(View view) {
                 Intent toSinup = new Intent(MainLogin.this , SinupActivity.class);
                 startActivity(toSinup);
+
+
+
             }
         });
 

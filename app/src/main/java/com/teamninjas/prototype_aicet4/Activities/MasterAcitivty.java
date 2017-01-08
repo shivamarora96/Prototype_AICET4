@@ -10,6 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 
 import com.teamninjas.prototype_aicet4.Adapters.Master_Adapter;
 import com.teamninjas.prototype_aicet4.R;
@@ -18,10 +22,13 @@ public class MasterAcitivty extends AppCompatActivity {
 
     private TabLayout mTablayout ;
     private ViewPager mViewPager ;
+    private ImageView mSearch ;
     private Master_Adapter mAdapter ;
     private DrawerLayout mdrawerLayout ;
     private NavigationView mNavigationView ;
     private ActionBarDrawerToggle mActionBarDrawerToggle ;
+    private AutoCompleteTextView actv;
+
 
 
 
@@ -30,10 +37,19 @@ public class MasterAcitivty extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master_acitivty);
 
+
+        mSearch=(ImageView)findViewById(R.id.search_button);
+
         //setting up toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.Master_toolbar);
         toolbar.setTitle("SCRAP BOOK");
         setSupportActionBar(toolbar);
+
+        actv=(AutoCompleteTextView)findViewById(R.id.search_bar);
+        String[] colleges = {"Maharaja Agrasen Institute of Technology","Bharti Vidyapeeth College of Engineering","Maharaja Surajmal Institute of Technology","Northern India Engineering College"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,colleges);
+        actv.setAdapter(adapter);
+
 
         mNavigationView = (NavigationView)findViewById(R.id.Master_navigaitonVIew);
         mdrawerLayout = (DrawerLayout)findViewById(R.id.Master_drawerLayout);
@@ -56,6 +72,13 @@ public class MasterAcitivty extends AppCompatActivity {
         mActionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         mActionBarDrawerToggle.syncState();
 
+        mSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(MasterAcitivty.this,CollegeInfo.class);
+                startActivity(i);
+            }
+        });
 
     }
 

@@ -72,6 +72,14 @@ public class SinupActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+//TODO REMOVE IT  LATER ..............
+        mButton_Register.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                startActivity(new Intent(SinupActivity.this , MasterAcitivty.class));
+                return  true ;
+            }
+        });
 
         if( getSharedPreferences("data" ,MODE_PRIVATE)!=null)
         Log.i("abcde" , getSharedPreferences("data" ,MODE_PRIVATE).getString(Constants.SHARED_PREF_COLLEGE_NAME_KEY , "no"));

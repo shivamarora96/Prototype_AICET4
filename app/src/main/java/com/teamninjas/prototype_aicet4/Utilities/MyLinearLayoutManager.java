@@ -1,4 +1,4 @@
-package com.teamninjas.prototype_aicet4.FeedRecyclerView;
+package com.teamninjas.prototype_aicet4.Utilities;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;

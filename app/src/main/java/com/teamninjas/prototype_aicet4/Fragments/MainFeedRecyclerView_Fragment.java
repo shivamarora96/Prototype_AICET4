@@ -1,26 +1,26 @@
-package com.teamninjas.prototype_aicet4.FeedRecyclerView;
+package com.teamninjas.prototype_aicet4.Fragments;
 
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.teamninjas.prototype_aicet4.Adapters.MainFeedRecyclerViewAdapter;
+import com.teamninjas.prototype_aicet4.Others.UserObject.MainFeedObject;
 import com.teamninjas.prototype_aicet4.R;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainFeedRecyclerView extends Fragment {
+public class MainFeedRecyclerView_Fragment extends Fragment {
 
 
     private RecyclerView recyclerView;

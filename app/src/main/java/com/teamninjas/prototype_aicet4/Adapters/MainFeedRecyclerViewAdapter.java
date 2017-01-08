@@ -1,4 +1,4 @@
-package com.teamninjas.prototype_aicet4.FeedRecyclerView;
+package com.teamninjas.prototype_aicet4.Adapters;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.teamninjas.prototype_aicet4.Others.UserObject.MainFeedObject;
 import com.teamninjas.prototype_aicet4.R;
 
 import org.json.JSONObject;

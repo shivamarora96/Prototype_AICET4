@@ -1,4 +1,4 @@
-package com.teamninjas.prototype_aicet4.FeedRecyclerView;
+package com.teamninjas.prototype_aicet4.Others.UserObject;
 
 
 public class MainFeedObject {

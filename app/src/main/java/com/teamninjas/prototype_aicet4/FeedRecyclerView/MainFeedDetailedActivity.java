@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.teamninjas.prototype_aicet4.R;
+import com.teamninjas.prototype_aicet4.Utilities.MyLinearLayoutManager;
 
 
 /**

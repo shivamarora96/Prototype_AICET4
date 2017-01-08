@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Prototype_AICET4</string>
     <string name="facebook_app_id">143671772791995</string>
+  <string name="mait_desc">Maharaja Agrasen Institute of Technology (MAIT) is a private Engineering College, located in New Delhi, India. One of the reputed engineering colleges of India, MAIT has 10 departments (Five-Engineering, Four-Research and Three-Auxiliary). It is affiliated to the Guru Gobind Singh Indraprastha University, Delhi. It is among the top 5 engineering colleges in New Delhi.</string>
 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

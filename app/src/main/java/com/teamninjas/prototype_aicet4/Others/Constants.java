@@ -16,7 +16,7 @@ public class Constants {
     public static final String SINUP_NO_FACULITY = "nope";
 
     //NETWORKING ...................
-    public static final String RETROFIT_BASE_URL = "http://139.59.43.9/" ;
+    public static final String RETROFIT_BASE_URL = "http://139.59.26.211/" ;
     public static final String RETROFIT_PARTIAL_LOGIN_URL = "api/user/login/" ;
     public static final String RETROFIT_PARTIAL_SINUP_URL = "api/user/register/" ;
 

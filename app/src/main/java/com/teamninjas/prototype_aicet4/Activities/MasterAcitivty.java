@@ -1,5 +1,6 @@
 package com.teamninjas.prototype_aicet4.Activities;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -8,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.teamninjas.prototype_aicet4.Adapters.Master_Adapter;
 import com.teamninjas.prototype_aicet4.R;
@@ -39,6 +41,7 @@ public class MasterAcitivty extends AppCompatActivity {
         mViewPager = (ViewPager)findViewById(R.id.Master_viewpager);
         mAdapter =  new Master_Adapter(getSupportFragmentManager());
         mViewPager.setOffscreenPageLimit(0);
+        setupDrawerLayout();
 
         //Set Viewpager  and Adapter to Tablayout
         mViewPager.setAdapter(mAdapter);
@@ -55,4 +58,34 @@ public class MasterAcitivty extends AppCompatActivity {
 
 
     }
+
+    private void setupDrawerLayout() {
+
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                int id = menuItem.getItemId();
+
+                switch (id) {
+                    case R.id.DrawerMenu_profile:
+                        Intent i = new Intent(getApplicationContext(), ProfileSystem.class);
+                        startActivity(i);
+                        finish();
+                        break;
+                    /*case R.id.DrawerMenu_aboutUs:
+                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
+                        startActivity(j);
+                        finish();
+                        break;*/
+
+                }
+
+
+                return true;
+            }
+        });
+    }
+
 }

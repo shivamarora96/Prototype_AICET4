@@ -38,6 +38,8 @@
 
         <activity android:name=".Activities.AdditionalInfo" />
 
+        <activity android:name=".Activities.ProfileSystem" />
+
 
 
         <activity android:name=".Activities.MainLogin">

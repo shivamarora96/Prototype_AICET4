@@ -76,7 +76,7 @@ public class SinupActivity extends AppCompatActivity {
         mButton_Register.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                startActivity(new Intent(SinupActivity.this , MasterAcitivty.class));
+                startActivity(new Intent(SinupActivity.this , AdditionalInfo.class));
                 return  true ;
             }
         });

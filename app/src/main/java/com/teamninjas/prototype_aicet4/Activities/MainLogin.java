@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,14 +28,24 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.teamninjas.prototype_aicet4.Network.Network_Utilities.Retrofit_Client;
+import com.teamninjas.prototype_aicet4.Network.Network_Utilities.Retrofit_Interface;
+import com.teamninjas.prototype_aicet4.Network.Request.Login_Request;
+import com.teamninjas.prototype_aicet4.Network.Response.Response_Login;
 import com.teamninjas.prototype_aicet4.R;
 
 import org.json.JSONObject;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainLogin extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
     EditText eemail,epassword;
-    String semail,spassword;
+    String semail,spassword , susername ;
     TextView tforgot,tnotuser;
+
 
     //fbsignin
     CallbackManager callbackManager;
@@ -151,13 +162,124 @@ public class MainLogin extends AppCompatActivity implements View.OnClickListener
 
     public void login(View view){
         semail = eemail.getText().toString();
+
+        check_if_userName_OR_email();
+
         spassword = epassword.getText().toString();
         Toast.makeText(getApplicationContext(),"check "+semail+spassword,Toast.LENGTH_LONG).show();
-        Intent i =new Intent(MainLogin.this,MasterAcitivty.class);
-        startActivity(i);
+
+        Request_server() ;
+
 
 
         //send data to backend to catch the response-if ok then intent otherwise toast of wrong password.
+    }
+
+    private void check_if_userName_OR_email() {
+        //Function Put value in semail oe susername according to entered value
+
+        int j = -1;
+        int k = - 1;
+
+        for(int i = 0 ; i <semail.length() ; i++){
+            Log.i("zaq" , "\n > " + semail.charAt(i));
+            if( semail.charAt(i) == '@') {
+                j = i;
+            }
+            if(semail.charAt(i) == '.'){
+                k = i ;
+            }
+        }
+
+        if( j == -1  && k ==-1 ){
+            susername = semail;
+            semail = null;
+        }
+        else {
+            susername = null;
+        }
+    }
+
+    private void Request_server() {
+
+        final SweetAlertDialog loading = new SweetAlertDialog(MainLogin.this , SweetAlertDialog.PROGRESS_TYPE);
+        loading.setTitleText("Loading");
+        loading.setCancelable(false);
+        loading.show();
+
+        Retrofit_Interface interfLogin = Retrofit_Client.getClient().create(Retrofit_Interface.class);
+        Call<Response_Login> login_call = null ;
+
+        Log.i("zaq" , "userName > " + susername + " email > " + semail);
+
+        if(susername == null && semail!=null) {
+           login_call =  interfLogin.call_LoginPost_with_body(new Login_Request(null, semail, spassword));
+        }
+        else if(semail == null && susername!=null){
+            login_call = interfLogin.call_LoginPost_with_body(new Login_Request(susername , null , spassword));
+        }
+
+        login_call.enqueue(new Callback<Response_Login>() {
+            @Override
+            public void onResponse(Call<Response_Login> call, Response<Response_Login> response) {
+
+                if(loading.isShowing()){
+                    loading.dismiss();
+                }
+
+                if(response.isSuccessful()){
+                    final SweetAlertDialog success = new SweetAlertDialog(MainLogin.this  , SweetAlertDialog.SUCCESS_TYPE);
+                    success.setTitleText("LOGIN SUCCESSFULL");
+                    success.setContentText("Welcome to Scrap Book");
+                    success.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                            Intent i =new Intent(MainLogin.this,MasterAcitivty.class);
+                            startActivity(i);
+                            success.dismiss();
+                            finish();
+                        }
+                    });
+                    success.show();
+
+
+                }
+                else if(!response.isSuccessful()){
+                    Toast.makeText(MainLogin.this , "Kindly Check Your Details  " , Toast.LENGTH_LONG).show();
+                    final SweetAlertDialog failed = new SweetAlertDialog(MainLogin.this , SweetAlertDialog.ERROR_TYPE);
+                    failed.setTitleText("FAILED !! ");
+                    failed.setContentText("Kindly Check Your Details !!");
+                    failed.setCancelable(false);
+                    failed.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                            failed.dismiss();
+                        }
+                    });
+                    failed.show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Response_Login> call, Throwable t) {
+
+                final SweetAlertDialog error_dialogue = new SweetAlertDialog(MainLogin.this , SweetAlertDialog.ERROR_TYPE);
+                error_dialogue.setTitleText("FAILED !! ");
+                error_dialogue.setContentText("Kindly Check Your Details !!");
+                error_dialogue.setCancelable(false);
+                error_dialogue.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        error_dialogue.dismiss();
+                    }
+                });
+                error_dialogue.show();
+            }
+        });
+
+
     }
 
     public void forget(View v){

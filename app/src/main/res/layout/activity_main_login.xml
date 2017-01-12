@@ -34,13 +34,12 @@
         android:padding="5dp"
         android:layout_height="wrap_content">
     <EditText
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:id="@+id/Login_email"
-        android:textStyle="bold"
         android:textSize="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="EMAIL-ID"/>
+        android:hint="EMAIL-ID / UserName"/>
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
